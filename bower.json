@@ -1,0 +1,15 @@
+{
+    "name": "LaeskApp",
+    "version": "0.0.0",
+    "homepage": "http://laeskapp.azurewebsites.net/",
+    "authors": [
+    "Mattza <matknu@kth.se>"
+  ],
+    "description": "LaeskApp",
+    "main": "index.html",
+    "keywords": [
+    "tacos"
+  ],
+    "license": "MIT",
+    "directory": "libs/"
+}

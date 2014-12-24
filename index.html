@@ -1,0 +1,39 @@
+<html ng-app="laeskApp">
+
+<head>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="app.js"></script>
+    <link href="app.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body ng-controller="mainCtrl">
+    <header>
+        <h3>Laeskapp!!</h3>
+        <img class="right-stuff" ng-src="{{authData.google.cachedUserProfile.picture}}" />
+        <span class="right-stuff">{{authData.google.displayName}}</p>
+    </header>
+    <div class="user-container" ng-if="state===1" ng-controller="userCtrl">
+        <h4>Saldo: {{person.saldo}}</h4>
+        <button class="big" ng-click="minus()">-</button>
+    </div>
+
+    <div ng-if="state===1" ng-controller="adminCtrl" style="background-color:grey">
+        <ul>
+            <li ng-repeat="person in persons">
+                {{person.name}} - {{person.saldo}}
+                
+                    <button ng-click="plus(person)">Plus</button>
+                    <button ng-click="hundra(person)">100:-</button>
+                
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>

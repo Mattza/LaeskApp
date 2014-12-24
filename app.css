@@ -1,0 +1,64 @@
+html {
+    font-family: sans-serif;
+}
+body {
+    margin: 0;
+}
+h3 {
+    font-size: 24px;
+}
+button {
+    position: relative;
+    padding: 8px 30px;
+    border: 0;
+    margin: 10px 1px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255, 255, 255, .84);
+    background-color: #0f9d58;
+    border-color: #4cae4c;
+    -webkit-transition: box-shadow .28s cubic-bezier(.4, 0, .2, 1);
+    transition: box-shadow .28s cubic-bezier(.4, 0, .2, 1);
+    outline: none!important;
+}
+button:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .23), 0 10px 30px rgba(0, 0, 0, .19);
+}
+button.big {
+    padding: 0 40px;
+    font-size: 60px;
+}
+header {
+    background: #373737;
+    height: 58px;
+}
+header img {
+    margin: 6px;
+    width: 46px;
+    border-radius: 50%;
+    float: right
+}
+header h3 {
+    margin: 16px;
+    float: left;
+}
+header span {
+    margin: 20px;
+    float: right;
+}
+header h3,
+header span {
+    color: white;
+}
+.user-container {
+    height: 200px;
+}
+.user-container * {
+    float: left;
+}
+.user-container h4 {
+    font-size: 60px;
+    margin: 10px;
+}

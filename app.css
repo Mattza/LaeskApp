@@ -53,7 +53,7 @@ header span {
     color: white;
 }
 .user-container {
-    height: 200px;
+    height: 50%;
 }
 .user-container * {
     float: left;

@@ -2,14 +2,17 @@ angular.module('laeskApp', ['firebase'])
     .controller('mainCtrl', function ($scope, $firebaseAuth) {
         $scope.state = 0;
         var ref = $firebaseAuth(new Firebase("https://laesk.firebaseio.com/"))
-        ref.$authWithOAuthPopup("google").then(function (authData) {
-            console.log("Logged in as:", authData);
-            $scope.authData = authData;
-            $scope.state = 1;
-        }).catch(function (error) {
-            $scope.state = -1
-            $scope.error = error;
-        });
+        $scope.login = function () {
+            ref.$authWithOAuthPopup("google").then(function (authData) {
+                console.log("Logged in as:", authData);
+                $scope.authData = authData;
+                $scope.state = 1;
+            }).catch(function (error) {
+                $scope.state = -1
+                $scope.error = error;
+            });
+        }
+        $scope.login();
     })
     .controller('userCtrl', function ($scope, $firebase, $firebaseAuth) {
 

@@ -16,6 +16,7 @@
         <img class="right-stuff" ng-src="{{authData.google.cachedUserProfile.picture}}" />
         <span class="right-stuff">{{authData.google.displayName}}</p>
     </header>
+    <button ng-click="login()" ng-if="state===0">Logga in</button>
     <div class="user-container" ng-if="state===1" ng-controller="userCtrl">
         <h4>Saldo: {{person.saldo}}</h4>
         <button class="big" ng-click="minus()">-</button>

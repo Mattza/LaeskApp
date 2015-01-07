@@ -19,13 +19,11 @@ angular.module('laeskApp', ['firebase'])
         'use strict';
         var syncObj = $firebase(new Firebase("https://laesk.firebaseio.com/" + $scope.$parent.authData.uid)).$asObject();
         syncObj.$loaded().then(function () {
-            if (!syncObj.$value) {
-                syncObj.name = $scope.$parent.authData.google.displayName;
+            syncObj.name = $scope.$parent.authData.google.displayName;
+            if (!syncObj.saldo) {
                 syncObj.saldo = 0;
-                syncObj.$save();
             }
-
-
+            syncObj.$save();
         });
         var taco = syncObj.$bindTo($scope, 'person');
         $scope.minus = function () {
